@@ -202,10 +202,7 @@ export class UserController extends AdaptableController {
   }
 
   defaultVerificationEmail({link, user, appName, }) {
-    const text = "Hi,\n\n" +
-        "You are being asked to confirm the e-mail address " + user.get("email") + " with " + appName + "\n\n" +
-        "" +
-        "Click here to confirm it:\n" + link;
+    const text =  "Hello "+ user.get("username") +",\n\n" + "To activate your account, please confirm your account by clicking here or copy and paste the following link into your browser.\n" + link + "\n\nRegards,\n\nValueCash Team";
     const to = user.get("email");
     const subject = 'Please verify your e-mail for ' + appName;
     return { text, to, subject };
